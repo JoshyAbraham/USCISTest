@@ -80,3 +80,17 @@ adb install App/build/outputs/apk/debug/app-debug.apk
 ## Notes on Up-to-Date Answers
 
 The baseline 128 Q/A set comes from the official USCIS 2025 PDF. The app injects ZIP-based current answers for questions that can change. If officials change, answers refresh from API sources on next quiz start.
+
+## Disclaimer
+
+### Educational Purposes Only
+This application is an unofficial, independent study tool developed for educational purposes. It is not affiliated with, endorsed by, or approved by the United States Citizenship and Immigration Services (USCIS) or the U.S. Department of Homeland Security. 
+
+### No Warranty (As-Is)
+This software is provided "as is" and "with all faults," without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, accuracy, or non-infringement. The author makes no guarantees that the questions, answers, or study materials provided in this app are completely up-to-date, accurate, or reflective of the actual naturalization exam. 
+
+### Limitation of Liability
+In no event shall the author or copyright holders be liable for any claim, damages, or other liability, whether in an action of contract, tort, or otherwise, arising from, out of, or in connection with the software or the use or other dealings in the software. 
+
+**By using this software, you agree that you are solely responsible for verifying the accuracy of the study material against official sources (such as uscis.gov). The author is not responsible for any failed exam outcomes, immigration delays, or damages resulting from the use of this application.**
+
