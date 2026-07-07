@@ -1,0 +1,38 @@
+*.iml
+.gradle/
+/local.properties
+/.idea/
+.DS_Store
+/build/
+/captures/
+.externalNativeBuild/
+.cxx/
+app/build/
+App/build/
+
+# Keystore files - DO NOT COMMIT
+*.jks
+*.keystore
+keystore.properties
+
+# Generated APKs - DO NOT COMMIT
+*.apk
+*.aab
+
+# Android Studio temporary files
+*.swp
+*~
+.navigation/
+output.json
+
+# OS specific
+Thumbs.db
+.DS_Store
+
+# Visual Studio files - DO NOT COMMIT
+.vs/
+*.vsidx
+*.suo
+*.user
+*.userosscache
+*.sln.docstates

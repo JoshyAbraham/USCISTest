@@ -1,0 +1,190 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Android: Build Debug APK",
+			"type": "shell",
+			"command": "${workspaceFolder}\\gradlew.bat",
+			"args": [
+				"assembleDebug"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "new"
+			}
+		},
+		{
+			"label": "Android: Install to Device/Emulator",
+			"type": "shell",
+			"command": "${workspaceFolder}\\gradlew.bat",
+			"args": [
+				"installDebug"
+			],
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "new"
+			}
+		},
+		{
+			"label": "Android: Build and Install",
+			"dependsOn": [
+				"Android: Build Debug APK",
+				"Android: Install to Device/Emulator"
+			],
+			"dependsOrder": "sequence",
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "new"
+			}
+		},
+		{
+			"label": "Android: Launch Emulator",
+			"type": "shell",
+			"command": "$env:LOCALAPPDATA\\Android\\Sdk\\emulator\\emulator.exe",
+			"args": [
+				"-avd",
+				"Pixel_6_API_34"
+			],
+			"isBackground": true,
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "new"
+			},
+			"detail": "Change 'Pixel_6_API_34' to your AVD name. Run 'emulator -list-avds' to see available devices."
+		},
+		{
+			"label": "Android: Launch Emulator and Install App",
+			"dependsOn": [
+				"Android: Launch Emulator",
+				"Android: Build and Install"
+			],
+			"dependsOrder": "sequence",
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "new"
+			}
+		},
+		{
+			"label": "Android: View Logcat (Filtered)",
+			"type": "shell",
+			"command": "$env:LOCALAPPDATA\\Android\\Sdk\\platform-tools\\adb.exe",
+			"args": [
+				"logcat",
+				"-s",
+				"CivicTestUSCIS:*",
+				"AndroidRuntime:E"
+			],
+			"isBackground": true,
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "dedicated"
+			}
+		},
+		{
+			"label": "Android: View Logcat (All)",
+			"type": "shell",
+			"command": "$env:LOCALAPPDATA\\Android\\Sdk\\platform-tools\\adb.exe",
+			"args": [
+				"logcat"
+			],
+			"isBackground": true,
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "dedicated"
+			}
+		},
+		{
+			"label": "Android: Clear Logcat",
+			"type": "shell",
+			"command": "$env:LOCALAPPDATA\\Android\\Sdk\\platform-tools\\adb.exe",
+			"args": [
+				"logcat",
+				"-c"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "Android: List Connected Devices",
+			"type": "shell",
+			"command": "$env:LOCALAPPDATA\\Android\\Sdk\\platform-tools\\adb.exe",
+			"args": [
+				"devices",
+				"-l"
+			],
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "new"
+			}
+		},
+		{
+			"label": "Android: List Available AVDs",
+			"type": "shell",
+			"command": "$env:LOCALAPPDATA\\Android\\Sdk\\emulator\\emulator.exe",
+			"args": [
+				"-list-avds"
+			],
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "new"
+			}
+		},
+		{
+			"label": "Android: Uninstall App",
+			"type": "shell",
+			"command": "$env:LOCALAPPDATA\\Android\\Sdk\\platform-tools\\adb.exe",
+			"args": [
+				"uninstall",
+				"com.joshy.civictestuscis"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "Android: Clean Build",
+			"type": "shell",
+			"command": "${workspaceFolder}\\gradlew.bat",
+			"args": [
+				"clean"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "Android: Run Unit Tests",
+			"type": "shell",
+			"command": "${workspaceFolder}\\gradlew.bat",
+			"args": [
+				"testDebugUnitTest"
+			],
+			"group": {
+				"kind": "test",
+				"isDefault": true
+			},
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "new"
+			}
+		},
+		{
+			"label": "Gradle: List Tasks",
+			"type": "shell",
+			"command": "${workspaceFolder}\\gradlew.bat",
+			"args": [
+				"tasks"
+			],
+			"problemMatcher": []
+		}
+	]
+}
